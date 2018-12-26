@@ -3,25 +3,33 @@
  */
 package shop.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author Maxim Kren E-mail: krenmaxim@gmail.com 24 дек. 2018 г. 19:46:29
  */
 
 @Entity
+@Table(name = "products")
 public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int ID;
+	@Column(name = "name")
 	private String name;
+	@Column(name = "description")
 	private String description;
+	@Column(name = "price")
 	private double price;
+	@Column(name = "available")
 	private boolean available;
+	@Column(name = "deleted")
 	private boolean deleted;
 
 	public int getID() {
